@@ -6,14 +6,11 @@ import {
 } from "../constants";
 
 const Login = () => {
-  // const logout = () => {
-  //   setToken("");
-  //   window.localStorage.removeItem("token");
-  // };
-
+  const scopes =
+    "user-read-playback-position user-top-read user-read-recently-played user-library-read user-read-private user-follow-read";
   return (
     <a
-      href={`${AUTH_ENDPOINT}?client_id=${CLIENTID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
+      href={`${AUTH_ENDPOINT}?client_id=${CLIENTID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${scopes}`}
     >
       Login to Spotify
     </a>

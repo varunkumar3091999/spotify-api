@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Artist from "./ containers/Artist";
 import Home from "./ containers/Home";
 import Login from "./ containers/Login";
+import Search from "./ containers/Search";
 
 const App = () => {
   const [token, setToken] = useState("");
@@ -24,14 +25,16 @@ const App = () => {
     setToken(token);
   }, []);
 
-  if (!token) {
-    return <Login />;
-  }
+  // if (!token) {
+  //   return <Login />;
+  // }
   return (
     <div>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/artist/:name" element={<Artist />} />
         </Routes>
       </BrowserRouter>
